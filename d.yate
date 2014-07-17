@@ -1,0 +1,14 @@
+module "mod_d"
+
+import "mod_b"
+import "mod_c"
+
+match .d content {
+    "from 'd' content for { name() }\n"
+    "from 'd()' { d() }\n"
+    apply .* content
+}
+
+func d() {
+    "dd"
+}

@@ -1,0 +1,13 @@
+module "mod_b"
+
+import "mod_a"
+
+match .b content {
+    "from 'b' content for { name() }\n"
+    "from 'b()' { b() }\n"
+    apply .* content
+}
+
+func b() {
+    "bb"
+}

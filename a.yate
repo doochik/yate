@@ -1,0 +1,15 @@
+module "mod_a"
+
+match / {
+    apply .* content
+}
+
+match .* content {
+    "from 'a' content for { name() }\n"
+    "from 'a()' { fa() }\n"
+    apply .* content
+}
+
+func fa() {
+    "aa"
+}

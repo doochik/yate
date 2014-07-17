@@ -1,0 +1,13 @@
+module "mod_c"
+
+import "mod_a"
+
+match .c content {
+    "from 'c' content for { name() }\n"
+    "from 'c()' { c() }\n"
+    apply .* content
+}
+
+func c() {
+    "cc"
+}
